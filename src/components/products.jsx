@@ -1,7 +1,3 @@
-import image4 from '../assets/image3.webp'
-import image5 from '../assets/image5.webp'
-import image6 from '../assets/image6.webp'
-import image7 from '../assets/image7.webp'
 import image8 from '../assets/image8.webp'
 import image9 from '../assets/image9.webp'
 import image10 from '../assets/image10.webp'
@@ -12,10 +8,33 @@ import "swiper/swiper-bundle.min.css";
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination'
 import {   Navigation, Pagination } from 'swiper';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import { useEffect } from 'react';
 
 
 
 const Products = () => {
+    gsap.registerPlugin(ScrollTrigger)
+    const tl = gsap.timeline()
+    const cards= document.querySelectorAll('.slide-image')
+    useEffect(()=>{
+
+        cards.forEach(card => {
+            tl.fromTo(card,{
+                opacity:0.8,
+                scale:0,
+                x:'500%'
+            },{opacity:1, duration:1,x:0, scale:1})
+            
+        });
+        ScrollTrigger.create({
+            animation:tl,
+            trigger:document.getElementsByClassName('mySwiper'),
+            toggleActions:'restart none restart none'
+        })
+    })
+
     const data= [
         {image:image8, description:''},
         {image:image9, description:''},

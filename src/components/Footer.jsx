@@ -1,3 +1,6 @@
+import { useRef, useEffect } from 'react'
+import gsap from 'gsap'
+
 const Footer = () => {
     return ( <>
         <footer className="h-[40vh] bg-[#fad2a1] pt-8 px-2 grid grid-cols-4 ">

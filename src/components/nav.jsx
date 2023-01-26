@@ -1,4 +1,9 @@
+import { useRef, useEffect } from 'react'
+import gsap from 'gsap'
+
 const Nav = () => {
+
+    
     return ( <>
     <nav className="px-32 flex justify-between absolute top-0 h-[10vh] border z-20 left-0 w-full items-center">
         <div className="brand  text-2xl">
