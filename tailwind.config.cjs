@@ -9,6 +9,11 @@ module.exports = {
     fontFamily:{
       'sans': ['Coco Gothic', ]
     },
+    colors:{
+      'primary':'#FFE4C4',
+      'complementary':'#00615f',
+      'black':'#000'
+    },
     extend: {},
   },
   plugins: [],
