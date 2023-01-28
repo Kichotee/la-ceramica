@@ -5,8 +5,8 @@ const Nav = () => {
 
     
     return ( <>
-    <nav className="px-32 flex justify-between absolute top-0 h-[10vh] border z-20 left-0 w-full items-center">
-        <div className="brand  text-2xl">
+    <nav className="sm:px-8 md:px-32 flex justify-between absolute top-0 h-[10vh] border z-20 left-0 w-full items-center">
+        <div className="brand sm:text-lg md:text-2xl">
             La ceramica
         </div>
 

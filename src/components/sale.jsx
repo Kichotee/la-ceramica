@@ -10,6 +10,7 @@ const Sale = () => {
         <img src={image7} alt="" className='relative z-40'/>
             </div>
             <div className="w-[40%] z-40">
+                
                 <h2 className='text-2xl z-40 mb-4'>About the store</h2>
                 <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore non aspernatur laudantium suscipit officia aut.

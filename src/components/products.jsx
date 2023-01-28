@@ -31,7 +31,7 @@ const Products = () => {
         ScrollTrigger.create({
             animation:tl,
             trigger:document.getElementsByClassName('mySwiper'),
-            toggleActions:'restart none restart none'
+            toggleActions:'restart none  none'
         })
     })
 
@@ -44,13 +44,13 @@ const Products = () => {
     ]
     return ( 
     <>
-    <header className="flex pt-24 px-32 justify-between text-xl mb-4">
+    <header className="flex pt-6 md:pt-24 px-8 md:px-32 justify-between text-xl mb-4">
             <p>Popular categories</p>
             <p>
                 see all
             </p>
         </header>
-        <div className="px-32">
+        <div className="px-8 md:px-32">
 
 
 
@@ -69,7 +69,7 @@ const Products = () => {
                     {
                         data.map(data=>(
                             <SwiperSlide className="slide-image box-1 h-[50vh] rounded mt-8 " key={data.description}>
-                            <img src={data.image} alt="" className='h-[40vh] w-[80%] rounded object-cover'/> 
+                            <img src={data.image} alt="" className='h-[40vh] w-2/3 md:w-[80%] rounded object-cover'/> 
                             <div className="h-[10vh] w-[80%]">
                                 <h2>Lorem</h2>
                                 <p>Lorem, ipsum dolor.</p>

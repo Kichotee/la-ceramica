@@ -6,7 +6,7 @@ import { useRef, useEffect } from 'react';
 const Store = () => {
     let heading = document.getElementsByClassName('heading');
     let content= document.getElementsByClassName('store-content')
-    let button= document.getElementsByClassName('btn')
+    let button= document.getElementsByClassName('button')
     let image= document.getElementsByClassName('image')
 
 
@@ -20,7 +20,7 @@ const Store = () => {
         .fromTo(content,{
             opacity:0,
             y:'500%'
-        },{opacity:1, duration:1,y:0
+        },{opacity:1, duration:0.5,y:0
         })
         .fromTo(image,{
             opacity:0,
@@ -31,8 +31,8 @@ const Store = () => {
             opacity:1,
             x:0,
            
-            duration:0.9
-        },'>')
+            duration:0.5
+        })
         .fromTo(button,{
             opacity:0,
            
@@ -40,7 +40,7 @@ const Store = () => {
         {
             opacity:1,
            
-            duration:0.9
+            duration:0.5
         })
        
         ScrollTrigger.create({
@@ -50,24 +50,27 @@ const Store = () => {
     })
     return ( <>
         <div className=" pt-16 w-full h-[100vh] gap-4 flex ">
-            <div className="w-[45%]">
+            <div className="w-[45%] sm:h-2/3 h-[45%] md:h-max">
 
-        <img src={image7} alt="" className='relative z-40 image'/>
+        <img src={image7} alt="" className='relative z-40 h-full sm:object-cover md:object-fill image'/>
         </div>
             <div className="w-[40%]  z-40 h-2/3 overflow-hidden">
                 
-                <div className="h-[30px] overflow-hidden">
+                <div className=" h-1/5 overflow-hidden">
 
-                <h2 className='text-2xl z-40 mb-4 heading ' ref={(el)=>{heading=el}}>About the store</h2>
+                <h2 className='text-2xl z-40 mb-2 md:mb-4 heading ' ref={(el)=>{heading=el}}>About the store</h2>
                 </div>
-                <div className="about-store h-[60px]  overflow-hidden">
+                <div className="about-store sm:h-2/5 md:h-[60px]  overflow-hidden">
 
 
                 <p className='store-content'>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore non aspernatur laudantium suscipit officia aut.
                 </p>
                 </div>
-            <button  className='btn my-4 '>Go to sale</button>
+                <div className="h-1/3">
+
+            <button  className='btn button my-4 '>Go to sale</button>
+                </div>
             </div>
 
         </div>

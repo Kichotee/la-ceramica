@@ -23,7 +23,7 @@ const Feedback = () => {
         trigger:section,
         toggleActions:'restart none restart none'
     })
-    })
+    },[])
     const data= [1,2,3]
     return ( <section className="section h-[90vh] py-8 bg-complementary/60  mb-6 flex flex-col">
         <div className="content text-[] text-center w-3/4 mx-auto">

@@ -35,7 +35,7 @@ const Popular = () => {
        
     })
     return ( < >
-    <section id='section' className="overflow-hidden px-32 pt-16 w-full h-[100vh] flex flex-col items-center z-40 overflow-x-hidden ">
+    <section id='section' className="overflow-hidden px-8 md:px-32 pt-16 w-full h-[100vh] flex flex-col items-center z-40 overflow-x-hidden ">
         <header className="flex w-full justify-between text-xl mb-4">
             <p>Popular categories</p>
             <p>
