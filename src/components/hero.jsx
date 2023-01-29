@@ -38,7 +38,7 @@ const Hero = () => {
         })
     })
     return (  <>
-    <div className="grid grid-cols-3  h-[100vh] max-h-screen border   w-full overflow-hidden">
+    <div className="grid grid-cols-3  h-[100vh] max-h-screen w-full overflow-hidden">
         <div className="grid-1 relative w-full h-[100vh] " ref={(el)=>{img1=el}}>
             <img src={image1} alt="" className='w-full h-[100vh] lg:h-[100vh] sm:object-cover '/>
             <div className="box  absolute w-48  h-[20%]  top-[50%] left-[50%] flex   flex-col items-center translate-x-[-50%] ">
