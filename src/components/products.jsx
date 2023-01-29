@@ -15,6 +15,7 @@ import { useEffect } from 'react';
 
 
 const Products = () => {
+    let screenwidth= screen.width
     gsap.registerPlugin(ScrollTrigger)
     const tl = gsap.timeline()
     const cards= document.querySelectorAll('.slide-image')
@@ -33,6 +34,9 @@ const Products = () => {
             trigger:document.getElementsByClassName('mySwiper'),
             toggleActions:'restart none  none'
         })
+
+            let screenwidth= screen.width
+
     })
 
     const data= [
@@ -40,7 +44,7 @@ const Products = () => {
         {image:image9, description:''},
         {image:image10, description:''},
         {image:image11, description:''},
-        {image:image8, description:''},
+        // {image:image8, description:''},
     ]
     return ( 
     <>
@@ -55,9 +59,9 @@ const Products = () => {
 
 
      <Swiper
-                  spaceBetween={0}
+                  spaceBetween={30}
                   modules={[Navigation, Pagination]}
-                  slidesPerView={4}
+                  slidesPerView={screenwidth>375?3:2}
                   touchRatio={1.5}
                  
                   navigation={true}
@@ -68,8 +72,8 @@ const Products = () => {
 
                     {
                         data.map(data=>(
-                            <SwiperSlide className="slide-image box-1 h-[50vh] rounded mt-8 " key={data.description}>
-                            <img src={data.image} alt="" className='h-[40vh] w-2/3 md:w-[80%] rounded object-cover'/> 
+                            <SwiperSlide className="slide-image box-1 h-[50vh] rounded mt-8 " key={data.image}>
+                            <img src={data.image} alt="" className='h-[40vh] w-[300px] md:w-[80%] rounded object-cover'/> 
                             <div className="h-[10vh] w-[80%]">
                                 <h2>Lorem</h2>
                                 <p>Lorem, ipsum dolor.</p>

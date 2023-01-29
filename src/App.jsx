@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Hero from './components/hero'
 import Nav from './components/nav'
 import Popular from './components/popular'
@@ -10,9 +10,48 @@ import Sale from './components/sale'
 
 function App() {
   
+  
+  function changeWheelSpeed(container, speedY) {
+    var removed = false;
+    var scrollY = 0;
+    var handleScrollReset = function() {
+      scrollY = container.scrollTop;
+    };
+    var handleMouseWheel = function(e) {
+      e.preventDefault();
+      scrollY += speedY * e.deltaY
+      if (scrollY < 0) {
+        scrollY = 0;
+      } else {
+        var limitY = container.scrollHeight - container.clientHeight;
+        if (scrollY > limitY) {
+          scrollY = limitY;
+        }
+      }
+      container.scrollTop = scrollY;
+    };
+    container.addEventListener('mouseup', handleScrollReset, false);
+    container.addEventListener('mousedown', handleScrollReset, false);
+    container.addEventListener('mousewheel', handleMouseWheel, false);
+    return function() {
+      if (removed) {
+        return;
+      }
+      container.removeEventListener('mouseup', handleScrollReset, false);
+      container.removeEventListener('mousedown', handleScrollReset, false);
+      container.removeEventListener('mousewheel', handleMouseWheel, false);
+      removed = true;
+    };
+  }
+  useEffect(()=>{
+    // changeWheelSpeed(document.getElementById('App'),5)
+      
+
+      
+  })
 
   return (
-    <div className="App">
+    <div id='App' className="App">
       <div className="font-sans text-complementary relative overflow-hidden">
       <Nav/>
        <Hero/>

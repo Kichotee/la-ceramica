@@ -23,36 +23,37 @@ const Popular = () => {
         box.forEach(image => {
             gsap.fromTo(image,{
                 opacity:0.8,
-                x:'500%'
-            },{opacity:1, duration:1,x:0, scrollTrigger:{
+                x:'240vw'
+            },{opacity:1, duration:0.5,x:'-100%', scrollTrigger:{
                 trigger:box,
             scrub:true,
 
-                toggleActions:'play none restart none'
+            toggleActions:'play none restart none'
             }})
             
         });
        
     })
     return ( < >
-    <section id='section' className="overflow-hidden px-8 md:px-32 pt-16 w-full h-[100vh] flex flex-col items-center z-40 overflow-x-hidden ">
-        <header className="flex w-full justify-between text-xl mb-4">
+    <section id='section' className="overflow-hidden px-8 md:px-32 pt-16 w-full h-[100vh] flex flex-col items-center z-50 overflow-x-hidden ">
+        <header className="flex w-full justify-between md:text-xl mb-4">
             <p>Popular categories</p>
             <p>
                 see all
             </p>
+            
         </header>
-        <div className="showcase grid h-[50vh] w-full grid-cols-3 gap-4 cursor-pointer text-primary">
+        <div className="showcase flex md:grid h-[50vh] w-[240vw] grid-cols-3 gap-4 cursor-pointer text-primary">
                {data.map(data=>
-                (<>
-            <div  ref={(el)=>{images=el}}  className="box-1 h-[50vh] bg-black rounded relative z-40 overflow-hidden">
-                 <img src={data.image} className='h-full w-full rounded opacity-70 object-cover hover:scale-[90%] origin-top-left duration-500' alt="" />
-                <h2 className='absolute z-50 top-[50%] text-center w-full h-8 text-slate-100 capitalize'>{data.description}</h2>
+                (
+            <div  ref={(el)=>{images=el}} key={data.image}  className="box-1 h-[70vh] bg-black rounded relative z-10 md:z-40 w-[80vw] overflow-hidden">
+                 <img src={data.image} className='h-full w-full md:w-full rounded opacity-70 object-cover hover:scale-[90%] origin-top-left duration-500' alt="" />
+                <h2 className='absolute z-50 top-[50%]  text-center w-full h-8 text-slate-100 capitalize'>{data.description}</h2>
             </div>
-                </>
+                
                ))}
         </div>
-        <div className="w-[65vw] h-[65vw] bg-[#fad2a1] absolute rounded-full z-0 right-[-7.5%] top-[25%]">  </div>
+        <div className="w-[200vw] h-[200vw] md:w-[65vw] md:h-[65vw]  bg-[#fad2a1] absolute rounded-full z-0 right-[-7.5%] top-[25%]">  </div>
 
     </section>
     </> );

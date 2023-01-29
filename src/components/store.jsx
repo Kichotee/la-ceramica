@@ -52,7 +52,7 @@ const Store = () => {
         <div className=" pt-16 w-full h-[100vh] gap-4 flex ">
             <div className="w-[45%] sm:h-2/3 h-[45%] md:h-max">
 
-        <img src={image7} alt="" className='relative z-40 h-full sm:object-cover md:object-fill image'/>
+        <img src={image7} alt="" className='relative z-40 h-full object-cover md:object-fill image'/>
         </div>
             <div className="w-[40%]  z-40 h-2/3 overflow-hidden">
                 

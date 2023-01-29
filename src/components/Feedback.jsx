@@ -33,7 +33,7 @@ const Feedback = () => {
         <div className="box h-3/4  px-6 py-8 flex gap-4 w-full items-center">
             {
                 data.map(data=>(
-                    <div className="card origin-center">
+                    <div className="card origin-center" key={data}>
                         <div className="basis-[70%] text-center px-2 pt-5 text-sm chat  z-40 relative">
 
                             <p className="font-bold text-lg">lorem</p>
