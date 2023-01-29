@@ -44,7 +44,7 @@ function App() {
     };
   }
   useEffect(()=>{
-    // changeWheelSpeed(document.getElementById('App'),5)
+    changeWheelSpeed(document.getElementById('App'),5)
       
 
       
@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div id='App' className="App">
-      <div className="font-sans text-complementary relative overflow-hidden">
+      <div className="font-sans text-complementary relative overflow-hidden scroll-smooth">
       <Nav/>
        <Hero/>
        <Popular/>
