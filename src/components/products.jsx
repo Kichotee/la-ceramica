@@ -65,11 +65,8 @@ const Products = () => {
             trigger:".slide-image",
             end:'+=1300',
             start:'top center',
-            markers:true,
             duration:4,
             scrub:true,
-            pin:true,
-            pinSpacing:false
         });
 	});
 
