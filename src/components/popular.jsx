@@ -18,8 +18,8 @@ const Popular = () => {
     let images= useRef()
     gsap.registerPlugin(ScrollTrigger)
     useEffect(()=>{
-        const box= document.querySelectorAll('.box-1')
 
+        const box= document.querySelectorAll('.box-1')
         box.forEach(image => {
             gsap.fromTo(image,{
                 opacity:0.8,
