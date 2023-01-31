@@ -7,10 +7,11 @@ module.exports = {
   theme: {
 
     fontFamily:{
-      'sans': ['Coco Gothic', ]
+      'sans': ['Coco Gothic', ],
+      'default':'montserrat'
     },
     colors:{
-      'primary':'#FFE4C4',
+      'primary':'#fad2a1',
       'complementary':'#00615f',
       'black':'#000'
     },

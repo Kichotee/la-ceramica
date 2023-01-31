@@ -49,27 +49,28 @@ const Store = () => {
         })
     })
     return ( <>
-        <div className=" pt-16 w-full h-[100vh] gap-4 flex ">
+        <div className=" pt-16 w-full h-[100vh] gap-4 flex text-primary">
             <div className="w-[45%] sm:h-2/3 h-[45%] md:h-max">
 
         <img src={image7} alt="" className='relative z-40 h-full object-cover md:object-fill image'/>
         </div>
-            <div className="w-[40%]  z-40 h-2/3 overflow-hidden">
+            <div className="w-[40%]  z-40 h-2/3 overflow-hidden mt-4 ">
                 
                 <div className=" h-1/5 overflow-hidden">
 
                 <h2 className='text-2xl z-40 mb-2 md:mb-4 heading ' ref={(el)=>{heading=el}}>About the store</h2>
                 </div>
-                <div className="about-store sm:h-2/5 md:h-[60px]  overflow-hidden">
+                <div className="about-store sm:h-2/5 md:h-3/5   overflow-hidden">
 
 
-                <p className='store-content'>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore non aspernatur laudantium suscipit officia aut.
+                <p className='store-content font-default'>
+                <span className='inPage-title font-sans' >la ceramica </span>  is the one stop store for all your ceramic neds. From floor and table tiles to pts and vases, 
+                <span className='inPage-title font-sans'>la ceramica </span> has what you need to complete your kitchen, bathroom home decor. Shop online or visit the store in person to find the perfect pot , tile, or ceramic piece for your home
                 </p>
                 </div>
                 <div className="h-1/3">
 
-            <button  className='btn button my-4 '>Go to sale</button>
+            <button  className='btn button my-2 md:my-4 '>Go to sale</button>
                 </div>
             </div>
 

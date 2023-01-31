@@ -7,6 +7,7 @@ import Store from './components/store'
 import Footer from './components/Footer'
 import Feedback from './components/Feedback'
 import Sale from './components/sale'
+import FormPage from './components/FormPage'
 
 function App() {
   
@@ -17,57 +18,22 @@ function App() {
   
   
   
-  const changeWheelSpeed=(container, speedY)=> {
-    var removed = false;
-    var scrollY = 0;
-    var handleScrollReset = function() {
-        scrollY = container.scrollTop;
-    };
-    var handleMouseWheel = function(e) {
-        e.preventDefault();
-        scrollY += speedY * e.deltaY
-        if (scrollY < 0) {
-            scrollY = 0;
-        } else {
-            var limitY = container.scrollHeight - container.clientHeight;
-            if (scrollY > limitY) {
-                scrollY = limitY;
-            }
-        }
-        container.scrollTop = scrollY;
-    };
-    container.addEventListener('mouseup', handleScrollReset, false);
-    container.addEventListener('mousedown', handleScrollReset, false);
-    container.addEventListener('mousewheel', handleMouseWheel, false);
-    return function() {
-        if (removed) {
-            return;
-        }
-        container.removeEventListener('mouseup', handleScrollReset, false);
-        container.removeEventListener('mousedown', handleScrollReset, false);
-        container.removeEventListener('mousewheel', handleMouseWheel, false);
-        removed = true;
-    };
-}
+
 useEffect(()=>{
-  // var container1 = document.querySelector('#App');
-  // changeWheelSpeed(container1, 0.05);  // 0.05 * default_scroll_speed
 
-      
-
-      
-  })
+})
 
   return (
     <div id='App' className="App">
-      <div className="font-sans text-complementary relative overflow-hidden scroll-smooth">
+      <div className="font-sans text-complementary relative overflow-hidden scroll-smooth tracking-wide">
       <Nav/>
        <Hero/>
        <Popular />
        <Store/>
-       <Products/>
+       {/* <Products/> */}
        <Feedback/>
        <Sale/>
+       <FormPage/>
        <Footer/>
       </div>
     </div>

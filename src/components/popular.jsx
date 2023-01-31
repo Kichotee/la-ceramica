@@ -5,6 +5,8 @@ import image6 from '../assets/image6.webp'
 import { useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 
 const data= [
@@ -47,13 +49,13 @@ const Popular = () => {
                {data.map(data=>
                 (
             <div  ref={(el)=>{images=el}} key={data.image}  className="box-1 h-[70vh] bg-black rounded relative z-10 md:z-40 w-[80vw] overflow-hidden">
-                 <img src={data.image} className='h-full w-full md:w-full rounded opacity-70 object-cover hover:scale-[90%] origin-top-left duration-500' alt="" />
+                 <LazyLoadImage src={data.image} className='h-full w-full md:w-full rounded opacity-70 object-cover hover:scale-[90%] origin-top-left duration-500' alt="" />
                 <h2 className='absolute z-50 top-[50%]  text-center w-full h-8 text-slate-100 capitalize'>{data.description}</h2>
             </div>
                 
                ))}
         </div>
-        <div className="w-[200vw] h-[200vw] md:w-[65vw] md:h-[65vw]  bg-[#fad2a1] absolute rounded-full z-0 right-[-7.5%] top-[25%]">  </div>
+        <div className="w-[200vw] h-[200vw] md:w-[70vw] md:h-[70vw]  bg-complementary absolute rounded-full z-0 right-[-7.5%]  top-[24%]">  </div>
 
     </section>
     </> );

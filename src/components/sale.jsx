@@ -2,6 +2,8 @@ import image7 from '../assets/image10.webp'
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css'
 
 const Sale = () => {
     gsap.registerPlugin(ScrollTrigger)
@@ -18,12 +20,12 @@ const Sale = () => {
         <div className=" sale py-8   px-8 w-full h-[80vh] md:h-[100vh]  gap-4 flex md:flex-row-reverse flex-col items-center">
             <div className="md:w-[45%] w-full">
 
-        <img src={image7} alt="" className='relative z-40' ref={(el)=>{saleImg=el}}/>
+        <LazyLoadImage effect='blur' src={image7} alt="" className='relative z-40' ref={(el)=>{saleImg=el}}/>
             </div>
             <div className="md:w-[40%] w-full z-40 text-right md:text-left">
                 
                 <h2 className='text-2xl z-40 mb-4'>About the store</h2>
-                <p>
+                <p className='font-default'>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore non aspernatur laudantium suscipit officia aut.
                 </p>
             <button className='btn my-4'>Go to sale</button>
