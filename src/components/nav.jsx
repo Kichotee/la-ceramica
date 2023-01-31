@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
-import { FaAlignJustify } from 'react-icons/fa'
+import { FaAlignJustify, FaCartPlus, FaHeart } from 'react-icons/fa'
 
 const Nav = () => {
     let [activeMenu, setActiveMenu] = useState(false);
@@ -8,19 +8,17 @@ const Nav = () => {
         setActiveMenu(!activeMenu	);
 	};
       
-    let menu= document.getElementsByClassName('mobileMenu')
+
+	let menu= useRef()
     useEffect(()=>{
-        if (screen.width>400) {
-            menu= document.getElementsByClassName('mobileMenu')
-            
-            gsap.fromTo(menu,{
-                autoAlpha:0,
+         gsap.fromTo(menu,{
+               opacity:0,
             },{
                 
-                autoAlpha:1,
+               opacity:1,
                 duration:0.5
             })
-        }
+        
         
     })
 	
@@ -30,31 +28,32 @@ const Nav = () => {
 				<div className="brand sm:text-lg font-bold md:text-2xl">
 					La ceramica
 				</div>
-				{screen.width > 375 ? (
+				{screen.width > 500 ? (
 					<>
-						<ul className="flex items-center w-[50%] justify-evenly">
+						<ul className=" items-center w-[50%] justify-evenly hidden md:flex">
 							<li>Catalog</li>
 							<li>Shipping and Payment</li>
 							<li>About us</li>
 						</ul>
 
-						<div className="icons w-[15%] ">
+						<div className="icons w-[15%]  hidden md:flex">
 							<ul className="flex w-full justify-between">
-								<li>cart</li>
-								<li>Favorite</li>
+								
+                                <FaCartPlus/>
+								<FaHeart></FaHeart>
 							</ul>
 						</div>
 					</>
 				) : (
 					<>
-						<div className="text-3xl" onClick={()=>toggle()}>
+						<div className="text-3xl block md:hidden" onClick={()=>toggle()}>
                             <FaAlignJustify/>
                         </div>
 					</>
 				)}
 				{activeMenu ==true  && (
                     <div className="relative z-50">
-					<ul className="mobileMenu fixed right-0 bg-complementary top-0 w-[60vw] z-60 h-screen  flex items-center flex-col py-[25%] justify-around text-primary">
+					<ul className="mobileMenu fixed right-0 bg-complementary top-0 w-[60vw] z-60 h-screen  flex items-center flex-col py-[25%] justify-around text-primary" ref={(el)=>{menu=el}}>
                         <FaAlignJustify className=" absolute top-4 text-primary text-3xl right-4" onClick={()=>setActiveMenu(false)}/>
 
 						<li>Catalog</li>

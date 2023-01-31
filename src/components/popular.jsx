@@ -55,7 +55,7 @@ const Popular = () => {
                 
                ))}
         </div>
-        <div className="w-[200vw] h-[200vw] md:w-[70vw] md:h-[70vw]  bg-complementary absolute rounded-full z-0 right-[-7.5%]  top-[24%]">  </div>
+        <div className="w-[70vw] md:h-[70vw]  bg-complementary absolute rounded-full z-0 right-[-4.5%]  top-[22%]">  </div>
 
     </section>
     </> );

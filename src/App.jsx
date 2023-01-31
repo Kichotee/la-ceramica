@@ -8,6 +8,7 @@ import Footer from './components/Footer'
 import Feedback from './components/Feedback'
 import Sale from './components/sale'
 import FormPage from './components/FormPage'
+import Show from './components/Show'
 
 function App() {
   
@@ -30,10 +31,10 @@ useEffect(()=>{
        <Hero/>
        <Popular />
        <Store/>
-       {/* <Products/> */}
        <Feedback/>
        <Sale/>
        <FormPage/>
+       <Show/>
        <Footer/>
       </div>
     </div>

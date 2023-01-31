@@ -17,7 +17,7 @@ const Footer = () => {
                 
             </div>
             <div className=" flex flex-col h-1/3 md:h-full w-full px-6 gap-6 text-center md:text-left items-center md:items-start">
-                <div className="flex h-1/2 flex-row w-full  gap-8">
+                <div className="flex h-1/2 flex-row w-full justify-center md:justify-start gap-8">
 
                     <FaInstagram className='text-xl'/>
                     <FaMailchimp className='text-xl'/>

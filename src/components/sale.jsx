@@ -17,12 +17,12 @@ const Sale = () => {
     return ( <>
     <div className="relative h-max">
 
-        <div className=" sale py-8   px-8 w-full h-[80vh] md:h-[100vh]  gap-4 flex md:flex-row-reverse flex-col items-center">
+        <div className=" sale py-16 md:py-8   px-8 w-full h-[80vh] md:h-[100vh]  gap-4 flex md:flex-row-reverse flex-col items-center">
             <div className="md:w-[45%] w-full">
 
         <LazyLoadImage effect='blur' src={image7} alt="" className='relative z-40' ref={(el)=>{saleImg=el}}/>
             </div>
-            <div className="md:w-[40%] w-full z-40 text-right md:text-left">
+            <div className="md:w-[40%] mt-12 w-full z-40 text-center md:text-left">
                 
                 <h2 className='text-2xl z-40 mb-4'>About the store</h2>
                 <p className='font-default'>
@@ -33,8 +33,8 @@ const Sale = () => {
 
 
         </div>
-        <div className="w-[70vw] h-[70vw] md:w-[35vw] md:h-[35vw] bg-[#fad2a1] absolute rounded-full z-0 right-0 md:left-[-2.5%] md:top-[15%]
-        top-[30%]">  </div>
+        <div className="w-[70vw] h-[70vw] md:w-[35vw] md:h-[35vw] bg-[#fad2a1] absolute rounded-full z-0 right-[3.25rem] md:left-[-2.5%] md:top-[15%]
+        top-[50%]">  </div>
     </div>
 
     
