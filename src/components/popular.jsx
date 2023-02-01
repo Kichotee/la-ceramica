@@ -21,9 +21,9 @@ const Popular = () => {
     gsap.registerPlugin(ScrollTrigger)
     useEffect(()=>{
 
-        const box= document.querySelectorAll('.box-1')
+    const box= document.querySelectorAll('.box-1')
         box.forEach(image => {
-            gsap.fromTo(image,{
+          window.onload=  gsap.fromTo(image,{
                 opacity:0.8,
                 x:'240vw'
             },{opacity:1, duration:0.5,x:'-100%', scrollTrigger:{

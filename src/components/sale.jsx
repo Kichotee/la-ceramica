@@ -9,9 +9,11 @@ const Sale = () => {
     gsap.registerPlugin(ScrollTrigger)
     let saleImg= useRef()
     useEffect(()=>{
-        gsap.fromTo(saleImg,{autoAlpha:0, scale:0},{autoAlpha:1, scale:1, scrollTrigger:{
+      window.onload=  gsap.fromTo(saleImg,{autoAlpha:0, scale:0},{autoAlpha:1, scale:1, scrollTrigger:{
             duration:2,
-            trigger:document.getElementsByClassName('sale')
+            trigger:document.getElementsByClassName('sale'),
+            start:'top center',
+            
         }})
     })
     return ( <>

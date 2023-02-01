@@ -11,8 +11,7 @@ const Store = () => {
 	);
 	let button =
 		document.getElementsByClassName("button");
-	let image =
-		document.getElementsByClassName("image");
+	let image = useRef()
 
 	gsap.registerPlugin(ScrollTrigger);
 	useEffect(() => {
@@ -70,6 +69,7 @@ const Store = () => {
 			<div className=" pt-16 w-full h-[100vh] gap-4 flex md:flex-row flex-col items-center md:text-primary">
 				<div className="w-full  md:w-[45%]  h-[45%] md:h-max">
 					<img
+					ref={el=>image=el}
 						src={image7}
 						alt=""
 						className="relative z-20 h-full object-cover md:object-fill image"
