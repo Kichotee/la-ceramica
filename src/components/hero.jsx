@@ -53,8 +53,8 @@ const Hero = () => {
                 opacity:1
             })
         })
-        mm.add('(max-width:400px)',()=>{
-            gsap.fromTo(img3.type,{opacity:0.5, scale:1.5, y:0},{opacity:1, scale:1, duration:4})
+        mm.add('(max-width:500px)',()=>{
+            gsap.fromTo(img2.type,{opacity:0.5, scale:1.5, y:0},{opacity:1, scale:1, duration:4})
         })
     })
     return (  <>
@@ -66,14 +66,14 @@ const Hero = () => {
                 <button className='btn'>See all</button>
             </div>
         </div>
-        <div className="grid-2 hidden  md:block relative w-full h-full" ref={(el)=>{img2.type=el}}>
-            <LazyLoadImage effect='blur' width={screen.width/3} src={image3} alt="" className='w-full   h-[100vh] md:h-[100vh] sm:object-cover'/>
+        <div className="grid-2  col-span-3  md:col-span-1    relative w-full h-full" ref={(el)=>{img2.type=el}}>
+            <LazyLoadImage effect='blur' width={screen.width>500? screen.width/3 :screen.width} src={image3} alt="" className='w-full   h-[100vh] md:h-[100vh] sm:object-cover'/>
             <div className="box absolute w-48  h-[20%]  top-[50%] left-[50%] flex flex-col items-center  translate-x-[-50%] ">
                 <h2>Sets</h2>
                 <button className='btn'>See all</button>
             </div>
         </div>
-        <div className="grid-3   col-span-3  md:col-span-1 block relative w-full h-full" ref={(el)=>{img3.type=el}}>
+        <div className="grid-3  hidden  md:block relative w-full h-full" ref={(el)=>{img3.type=el}}>
             <LazyLoadImage effect='blur' width={screen.width>500? screen.width/3 :screen.width } src={image2} alt="" className='w-full  h-[100vh] md:h-[100vh] object-cover'/>
             <div className="box absolute w-48  h-[20%]  top-[50%] left-[50%] flex  flex-col items-center  translate-x-[-50%] ">
                 <h2>Sets</h2>
