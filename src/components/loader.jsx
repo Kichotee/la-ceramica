@@ -1,6 +1,6 @@
-import '../app.css'
 import gsap from 'gsap';
 import { useRef, useEffect } from 'react';
+import '../loader.css'
 
 const Loader = () => {
 
