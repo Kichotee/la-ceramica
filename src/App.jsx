@@ -9,22 +9,22 @@ import Feedback from './components/Feedback'
 import Sale from './components/sale'
 import FormPage from './components/FormPage'
 import Show from './components/Show'
+import Loader from './components/loader'
 
 function App() {
-  
-  
-  
-  
-  // 1.5  * default_scroll_speed
-  
-  
-  
 
-useEffect(()=>{
+let [isLoading, setIsLoading]= useState(false)
 
-})
-
+setTimeout(() => {
+  setIsLoading(true)
+}, 6000)
   return (
+   
+   
+   isLoading ==false ? (
+   <>
+      <Loader />
+   </>): (
     <div id='App' className="App">
       <div className="font-sans text-complementary relative overflow-hidden scroll-smooth tracking-wide">
       <Nav/>
@@ -37,7 +37,7 @@ useEffect(()=>{
        <Show/>
        <Footer/>
       </div>
-    </div>
+    </div>)
   )
 }
 

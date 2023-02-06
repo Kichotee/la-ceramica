@@ -18,12 +18,25 @@ const Hero = () => {
     let img2 = new images('type')
     let img3 = new images('type')
 
-
+    let page=useRef('')
 
      useEffect(()=>{
         let mm= gsap.matchMedia()
+        setTimeout(()=>{
+
+            gsap.fromTo(page,{
+               opacity:0, 
+            },
+            {
+                opacity:1,
+               duration:0.2 
+            }   
+            )
+        })
 
         mm.add('(min-width:420px)', ()=>{
+
+
 
             gsap.fromTo(img1.type,{
                 opacity:0,
@@ -58,7 +71,7 @@ const Hero = () => {
         })
     })
     return (  <>
-    <div className="grid grid-cols-3  h-[100vh] max-h-screen w-screen overflow-hidden">
+    <div ref={el=>{page=el}} className="grid grid-cols-3  h-[100vh] max-h-screen w-screen overflow-hidden">
         <div className="grid-1 hidden relative w-full h-full md:block " ref={(el)=>{img1.type=el}}>
             <LazyLoadImage effect='blur' width={screen.width/3} src={image1} alt="" className='w-full h-[100vh] lg:h-[100vh] object-cover '/>
             <div className="box  absolute w-48  h-[20%]  top-[50%] left-[50%] flex   flex-col items-center translate-x-[-50%] ">
